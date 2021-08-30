@@ -9,6 +9,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({        // esto es "decorator function"
   declarations: [    // aquí van todos los components
@@ -21,6 +22,7 @@ import { MatSliderModule } from '@angular/material/slider';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatMenuModule
   ],
   providers: [
     CoursesService
