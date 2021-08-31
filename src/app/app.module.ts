@@ -10,12 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({        // esto es "decorator function"
   declarations: [    // aquí van todos los components
     AppComponent, 
     CoursesComponent, 
-    CourseComponent
+    CourseComponent, MyDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,11 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSliderModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatCardModule,
+    LayoutModule
   ],
   providers: [
     CoursesService
