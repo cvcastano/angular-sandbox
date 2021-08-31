@@ -1,44 +1,42 @@
 <h1>Angular</h1>
+
 <mat-sidenav-container class="example-container">
-  <mat-sidenav opened mode="side">
-    Start SideNav
-    <br />
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
     <button mat-button [matMenuTriggerFor]="nav">
       <mat-icon aria-hidden="false" aria-label="menu icon">menu</mat-icon>
     </button>
-    <mat-menu #nav="matMenu" yPosition="above">
+    <mat-menu #nav="matMenu" yPosition='above'>
       <button mat-menu-item [matMenuTriggerFor]="nav1">Nav1</button>
       <button mat-menu-item [matMenuTriggerFor]="nav2">Nav2</button>
     </mat-menu>
-    <mat-menu #nav1="matMenu" yPosition="below">
-      <button mat-menu-item [matMenuTriggerFor]="fighters">
-        Zambian Freedom Fighters
-      </button>
+    <mat-menu #nav1="matMenu" yPosition='below'>
+      <button mat-menu-item [matMenuTriggerFor]="fighters">Zambian Freedom Fighters</button>
       <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
       <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
     </mat-menu>
-
-    <mat-menu #nav2="matMenu" xPosition="before">
+    
+    <mat-menu #nav2="matMenu" xPosition='before'>
       <button mat-menu-item>Nav2A</button>
       <button mat-menu-item>Nav2B</button>
       <button mat-menu-item>Nav2C</button>
     </mat-menu>
-
-    <mat-menu #fighters="matMenu" xPosition="before">
+    
+    <mat-menu #fighters="matMenu" xPosition='before'>
       <button mat-menu-item>Kenneth Kaunda</button>
       <button mat-menu-item>Harry Nkumbula</button>
       <button mat-menu-item>Sikota Wina</button>
       <button mat-menu-item>Simon Kapwepwe</button>
     </mat-menu>
-
+    
     <mat-menu #amphibians="matMenu">
       <button mat-menu-item>Sonoran desert toad</button>
       <button mat-menu-item>Western toad</button>
       <button mat-menu-item>Arroyo toad</button>
       <button mat-menu-item>Yosemite toad</button>
     </mat-menu>
-
-    <mat-menu #reptiles="matMenu" yPosition="above" xPosition="before">
+    
+    <mat-menu #reptiles="matMenu" yPosition='above' xPosition='before'>
       <button mat-menu-item>Banded Day Gecko</button>
       <button mat-menu-item>Banded Gila Monster</button>
       <button mat-menu-item>Black Tree Monitor</button>
@@ -46,18 +44,35 @@
       <button mat-menu-item disabled>Velociraptor</button>
     </mat-menu>
   </mat-sidenav>
-  <mat-sidenav opened mode="side" position="end">
-    End SideNav
-    <br />
-    <button mat-button>This is a button</button>
-  </mat-sidenav>
-  Main
-  <br />
-  <courses></courses>
-  <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
 
-  <app-my-dashboard></app-my-dashboard>
+  <mat-sidenav-content>
+    <button mat-button>This is a button</button> 
+    <p><button mat-button (click)="sidenav.toggle()"><mat-icon aria-hidden="false" aria-label="menu icon">menu</mat-icon></button></p>
+    <app-my-dashboard></app-my-dashboard>
+
+  </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
