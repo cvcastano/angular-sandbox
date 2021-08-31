@@ -1,8 +1,14 @@
-.example-container {
+.container {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
   }
-  
+  .sidenav-left {
+    width: 200px;
+  }
+  .main {
+    margin: 10px;
+    border: solid black 3px;
+  }

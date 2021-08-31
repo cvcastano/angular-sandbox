@@ -1,8 +1,8 @@
 <h1>Angular</h1>
 
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav-left" #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+    (closed)="events.push('close!')">     <!-- over (default), push or side -->
     <button mat-button [matMenuTriggerFor]="nav">
       <mat-icon aria-hidden="false" aria-label="menu icon">menu</mat-icon>
     </button>
@@ -15,27 +15,27 @@
       <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
       <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
     </mat-menu>
-    
+
     <mat-menu #nav2="matMenu" xPosition='before'>
       <button mat-menu-item>Nav2A</button>
       <button mat-menu-item>Nav2B</button>
       <button mat-menu-item>Nav2C</button>
     </mat-menu>
-    
+
     <mat-menu #fighters="matMenu" xPosition='before'>
       <button mat-menu-item>Kenneth Kaunda</button>
       <button mat-menu-item>Harry Nkumbula</button>
       <button mat-menu-item>Sikota Wina</button>
       <button mat-menu-item>Simon Kapwepwe</button>
     </mat-menu>
-    
+
     <mat-menu #amphibians="matMenu">
       <button mat-menu-item>Sonoran desert toad</button>
       <button mat-menu-item>Western toad</button>
       <button mat-menu-item>Arroyo toad</button>
       <button mat-menu-item>Yosemite toad</button>
     </mat-menu>
-    
+
     <mat-menu #reptiles="matMenu" yPosition='above' xPosition='before'>
       <button mat-menu-item>Banded Day Gecko</button>
       <button mat-menu-item>Banded Gila Monster</button>
@@ -45,16 +45,20 @@
     </mat-menu>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <button mat-button>This is a button</button> 
-    <p><button mat-button (click)="sidenav.toggle()"><mat-icon aria-hidden="false" aria-label="menu icon">menu</mat-icon></button></p>
+  <mat-sidenav-content class="main">
+    <button mat-button>This is a button</button>
+
+    <p><button mat-button (click)="sidenav.toggle()">
+        <mat-icon aria-hidden="false" aria-label="menu icon">menu</mat-icon>
+      </button></p>
+
     <app-my-dashboard></app-my-dashboard>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-  
+
 
 
 
