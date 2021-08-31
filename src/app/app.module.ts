@@ -15,7 +15,7 @@ import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from '@angular/cdk/layout';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({        // esto es "decorator function"
   declarations: [    // aquí van todos los components
     AppComponent, 
@@ -32,7 +32,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
-    LayoutModule
+    LayoutModule,
+    MatSidenavModule
   ],
   providers: [
     CoursesService
